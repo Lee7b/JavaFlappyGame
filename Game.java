@@ -119,6 +119,9 @@ public class Game extends JPanel
 	
 	public void moveBG() //Method to scroll the background
 	{
+		bg1X -= 5; //Move bg1 5 to the left
+		bg2X -= 5; //Move bg2 5 to the left
+		
 		if (bg1X + 600 <= 0) //If the first bg image goes off screen, move it back to the right
 			bg1X = 600;
 		if (bg2X + 600 <= 0) //Same thing, but with the second bg image
@@ -129,8 +132,8 @@ public class Game extends JPanel
 	{
 		super.paintComponent(g);
 		
-		g.drawImage(bg, bg1X -= 5, 0, null);//Draw background image 1
-		g.drawImage(bg, bg2X -= 5, 0, null);//Draw background image 2
+		g.drawImage(bg, bg1X, 0, null);//Draw background image 1
+		g.drawImage(bg, bg2X, 0, null);//Draw background image 2
 		
 		//Draw the character and pipes
 		pipe1.paintComponent(g);	//Draw the set of first pipes
